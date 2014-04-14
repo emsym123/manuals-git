@@ -8,7 +8,7 @@
 .. toctree::
    :maxdepth: 2
 
-   git文档
+   git
    
   
 

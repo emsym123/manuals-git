@@ -1,0 +1,32 @@
+
+昂信嵌入式 git 使用文档
+=================================
+
+基于 freescale i.MX6 处理器。
+
+目录
+
+.. toctree::
+   :maxdepth: 2
+   
+   在LINUX上安装，可以用系统提供的包管理工具，$ yum install git-core
+   在Ubuntu这类系统上，用apt-get 安装，$ apt-get install git-core
+   在Windows上安装，可以从Google Code上下载安装文件(.exe):  http://code.google.com/p/msysgit?或者去官网下载　http://git-scm.com/
+   下一步 
+   uart123
+   lcd
+   audio
+   ifsum
+   ethernet
+   
+   pcb
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

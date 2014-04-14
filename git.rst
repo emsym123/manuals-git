@@ -3,7 +3,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-Git 使用文档
+Git 使用安装文档
 ===============
    在LINUX上安装，可以用系统提供的包管理工具，$ yum install git-core
    在Ubuntu这类系统上，用apt-get 安装，$ apt-get install git-core

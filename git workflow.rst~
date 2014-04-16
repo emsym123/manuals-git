@@ -1,3 +1,11 @@
 
 git workflow使用文档
 ==================================
+
+git 工作流程请读懂下图    
+
+ * Item Foo
+ * Item Bar
+.. image:: _static/images17.png  
+
+.. image:: _static/workflow.png  

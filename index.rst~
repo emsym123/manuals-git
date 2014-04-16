@@ -6,8 +6,13 @@
 
 .. toctree::
    :maxdepth: 2
-
+  
+   QA
    git
+   git workflow
+   github
+   redthedocs
+   everystyle
   
 
 

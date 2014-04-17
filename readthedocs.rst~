@@ -2,14 +2,17 @@
 readthedocs使用文档
 ==============================
 
-readthedocs是创建、托管并浏览文档的网站。它与sphinx-doc的结合，能够生成出最完美的文档。    
-readthedocs与sphinx-doc的学习，［］这个网站还不错，也可以到官网上去学习
+readthedocs是托管并浏览文档的网站。readthedocs与sphinx-doc的结合，能够生成出 *对外公开* 的文档。   
 
-sphinx-doc语法 [#f1]_ 
+使用方向：研发人员所开发的成果，要以文档的形式体现出。  
+
+This is a paragraph that contains `a link`_.
+
+.. _a link: http://sphinx-doc-zh.readthedocs.org/en/latest/ 
 
 
-.. rubric:: Footnotes
 
-.. [#f1] sphinx-doc语法学习 http://jiangliuer-studyreadthedocs.readthedocs.org/en/latest/sphinx/reStructuredText_1.html#id1
+
+
 
 

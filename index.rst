@@ -12,7 +12,7 @@
    git workflow
    github
    readthedocs
-   everystyle
+   
   
 
 

@@ -40,8 +40,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Git、QA使用文档 '
-copyright = u'2014, EMSYM'
+project = u'git '
+copyright = u'2014, yumin'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

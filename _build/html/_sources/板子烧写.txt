@@ -1,0 +1,32 @@
+
+板子烧写
+================================================
+
+Mx6 nand启动烧写  
+
+u  打开烧写工具mfg，成功识别为HID设备（mini usb连接）  
+
+注（烧写之前设置启动为serial download模式）  
+
+.. image:: _static/1.png
+   :width: 60%    
+
+u  启动串口终端，并设置波特率为115200  
+
+u  进入终端，出现烧写进程，按回车键进入uboot命令端  
+
+.. image:: _static/2.png
+   :width: 60%      
+u  输入烧写nand分区配置，配置内容在根目录下DL.txt文档中，按回车键继续。  
+
+.. image:: _static/3.png
+   :width: 60%     
+u  输入boot命令，回车进行烧写，等待烧写完成。  
+
+.. image:: _static/4.png
+   :width: 60%      
+u  烧写成功     
+
+.. image:: _static/5.png  
+   :width: 60%      
+u  断电，设置启动模式为nand启动，上电重启  

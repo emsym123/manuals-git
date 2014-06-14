@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>板子烧写 &mdash; Git、QA使用文档  1.1.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Git、QA使用文档  1.1.1 documentation" href="index.html" />
+    <link rel="prev" title="烧写参数" href="烧写参数.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="烧写参数.html" title="烧写参数"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Git、QA使用文档  1.1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>板子烧写<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Mx6 nand启动烧写</p>
+<p>u  打开烧写工具mfg，成功识别为HID设备（mini usb连接）</p>
+<p>注（烧写之前设置启动为serial download模式）</p>
+<a class="reference internal image-reference" href="_static/1.png"><img alt="_static/1.png" src="_static/1.png" style="width: 60%;" /></a>
+<p>u  启动串口终端，并设置波特率为115200</p>
+<p>u  进入终端，出现烧写进程，按回车键进入uboot命令端</p>
+<a class="reference internal image-reference" href="_static/2.png"><img alt="_static/2.png" src="_static/2.png" style="width: 60%;" /></a>
+<p>u  输入烧写nand分区配置，配置内容在根目录下DL.txt文档中，按回车键继续。</p>
+<a class="reference internal image-reference" href="_static/3.png"><img alt="_static/3.png" src="_static/3.png" style="width: 60%;" /></a>
+<p>u  输入boot命令，回车进行烧写，等待烧写完成。</p>
+<a class="reference internal image-reference" href="_static/4.png"><img alt="_static/4.png" src="_static/4.png" style="width: 60%;" /></a>
+<p>u  烧写成功</p>
+<a class="reference internal image-reference" href="_static/5.png"><img alt="_static/5.png" src="_static/5.png" style="width: 60%;" /></a>
+<p>u  断电，设置启动模式为nand启动，上电重启</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="烧写参数.html"
+                        title="previous chapter">烧写参数</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/板子烧写.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="烧写参数.html" title="烧写参数"
+             >previous</a> |</li>
+        <li><a href="index.html">Git、QA使用文档  1.1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, EMSYM.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

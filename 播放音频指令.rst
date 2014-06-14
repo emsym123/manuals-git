@@ -1,0 +1,60 @@
+
+播放音频指令
+==========================================
+
+如果屏幕没显示执行下面操作：  
+
+在启动过程中，没进入系统之前，按“space”或“Enter”进入U-Boot   
+
+MX6DL SABREAUTO U-Boot >  
+
+setenv bootargs 'noinitrd console=ttymxc3,115200n8 ubi.mtd=2 root=ubi0:rootfs  
+
+rootfstype=ubifs rootwait rw  
+
+mtdparts=gpmi-nand:16m(boot),16m(kernel),420m(rootfs),-(user)  
+
+video=mxcfb1:dev=lcd,CLAA-WVGA,if=RGB24,bpp=32  
+
+video=mxcfb0:dev=ldb,LDB-WVGA,if=RGB666,bpp=32 ldb=sep1'  
+
+然后输入如下指令，启动进入系统：  
+
+MX6DL SABREAUTO U-Boot >boot  
+
+（之上操作，在第一次执行时，设置，之后就不需要了）  
+
+有显示执行这些操作：  
+
+登陆  
+
+imx6qsabresd login: root  
+
+进入usr目录  
+
+root@imx6qsabresd:~# cd/usr  
+
+加入声音模块  
+
+root@imx6qsabresd:/usr# insmod snd-scc-wm8960.ko  
+
+root@imx6qsabresd:/usr# insmod snd-scc-imx-wm8960.ko  
+
+（如果板子上没有这俩个文件，就拷进去，再添加）  
+ 
+查看通道  
+
+root@imx6qsabresd:/usr# amixer contents  
+
+开启左右声道（id=40 左声道， id=37 右声道，id=5 音量）：  
+
+root@imx6qsabresd:/usr# amixer cset numid=37 1  
+
+root@imx6qsabresd:/usr# amixer cset numid=40 1  
+
+root@imx6qsabresd:/usr# amixer cset numid=5 90 90  
+
+播放声音文件  
+
+root@imx6qsabresd:/usr#aplay love.wav  
+

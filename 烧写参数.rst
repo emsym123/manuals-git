@@ -1,0 +1,13 @@
+
+
+烧写参数
+===============================
+
+
+linux 启动单7寸
+setenv bootargs 'console=ttymxc3,115200n8 ubi.mtd=2 root=ubi0:rootfs rootfstype=ubifs rootwait rw mtdparts=gpmi-nand:16m(boot),16m(kernel),420m(rootfs),-(user) video=mxcfb1:dev=lcd,CLAA-WVGA,if=RGB24 video=mxcfb0:dev=ldb,LDB-XGA,if=RGB666'
+
+setenv bootcmd 'nand read ${loadaddr} 0x1000000 0x400000;bootm'
+烧写
+setenv bootargs 'console=ttymxc3,115200 rdinit=/linuxrc mtdparts=gpmi-nand:16m(boot),16m(kernel),420m(rootfs),-(user)arm_freq=800'
+

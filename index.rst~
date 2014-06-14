@@ -8,6 +8,7 @@
    :maxdepth: 2
   
    QA
+   email
    git
    git workflow
    github

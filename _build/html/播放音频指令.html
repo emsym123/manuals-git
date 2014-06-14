@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>播放音频指令 &mdash; Git、QA使用文档  1.1.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Git、QA使用文档  1.1.1 documentation" href="index.html" />
+    <link rel="next" title="烧写参数" href="烧写参数.html" />
+    <link rel="prev" title="readthedocs使用文档" href="readthedocs.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="烧写参数.html" title="烧写参数"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="readthedocs.html" title="readthedocs使用文档"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Git、QA使用文档  1.1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>播放音频指令<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>如果屏幕没显示执行下面操作：</p>
+<p>在启动过程中，没进入系统之前，按“space”或“Enter”进入U-Boot</p>
+<p>MX6DL SABREAUTO U-Boot &gt;</p>
+<p>setenv bootargs &#8216;noinitrd console=ttymxc3,115200n8 ubi.mtd=2 root=ubi0:rootfs</p>
+<p>rootfstype=ubifs rootwait rw</p>
+<p>mtdparts=gpmi-nand:16m(boot),16m(kernel),420m(rootfs),-(user)</p>
+<p>video=mxcfb1:dev=lcd,CLAA-WVGA,if=RGB24,bpp=32</p>
+<p>video=mxcfb0:dev=ldb,LDB-WVGA,if=RGB666,bpp=32 ldb=sep1&#8217;</p>
+<p>然后输入如下指令，启动进入系统：</p>
+<p>MX6DL SABREAUTO U-Boot &gt;boot</p>
+<p>（之上操作，在第一次执行时，设置，之后就不需要了）</p>
+<p>有显示执行这些操作：</p>
+<p>登陆</p>
+<p>imx6qsabresd login: root</p>
+<p>进入usr目录</p>
+<p><a class="reference external" href="mailto:root&#37;&#52;&#48;imx6qsabresd">root<span>&#64;</span>imx6qsabresd</a>:~# cd/usr</p>
+<p>加入声音模块</p>
+<p><a class="reference external" href="mailto:root&#37;&#52;&#48;imx6qsabresd">root<span>&#64;</span>imx6qsabresd</a>:/usr# insmod snd-scc-wm8960.ko</p>
+<p><a class="reference external" href="mailto:root&#37;&#52;&#48;imx6qsabresd">root<span>&#64;</span>imx6qsabresd</a>:/usr# insmod snd-scc-imx-wm8960.ko</p>
+<p>（如果板子上没有这俩个文件，就拷进去，再添加）</p>
+<p>查看通道</p>
+<p><a class="reference external" href="mailto:root&#37;&#52;&#48;imx6qsabresd">root<span>&#64;</span>imx6qsabresd</a>:/usr# amixer contents</p>
+<p>开启左右声道（id=40 左声道， id=37 右声道，id=5 音量）：</p>
+<p><a class="reference external" href="mailto:root&#37;&#52;&#48;imx6qsabresd">root<span>&#64;</span>imx6qsabresd</a>:/usr# amixer cset numid=37 1</p>
+<p><a class="reference external" href="mailto:root&#37;&#52;&#48;imx6qsabresd">root<span>&#64;</span>imx6qsabresd</a>:/usr# amixer cset numid=40 1</p>
+<p><a class="reference external" href="mailto:root&#37;&#52;&#48;imx6qsabresd">root<span>&#64;</span>imx6qsabresd</a>:/usr# amixer cset numid=5 90 90</p>
+<p>播放声音文件</p>
+<p><a class="reference external" href="mailto:root&#37;&#52;&#48;imx6qsabresd">root<span>&#64;</span>imx6qsabresd</a>:/usr#aplay love.wav</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="readthedocs.html"
+                        title="previous chapter">readthedocs使用文档</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="烧写参数.html"
+                        title="next chapter">烧写参数</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/播放音频指令.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="烧写参数.html" title="烧写参数"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="readthedocs.html" title="readthedocs使用文档"
+             >previous</a> |</li>
+        <li><a href="index.html">Git、QA使用文档  1.1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, EMSYM.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
